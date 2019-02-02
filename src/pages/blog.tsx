@@ -1,15 +1,10 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import * as styles from "./blog.module.scss";
+import Layout from "../components/layout";
 
 interface Post {
     title: string;
-    subtitle: {
-        subtitle: string;
-    };
-    description: {
-        description: string;
-    };
     mainImage: {
         resolutions: {
             src: string;
@@ -31,13 +26,8 @@ interface BlogProps {
             edges: [
                 {
                     node: {
+                        id: string;
                         title: string;
-                        subtitle: {
-                            subtitle: string;
-                        };
-                        description: {
-                            description: string;
-                        };
                         mainImage: {
                             resolutions: {
                                 src: string;
@@ -45,6 +35,7 @@ interface BlogProps {
                         };
                         slug: string;
                         postedDate: string;
+                        createdAt: string;
                     };
                 }
             ];
@@ -64,37 +55,38 @@ export const BlogQuery = graphql`
         allContentfulBlogPost(sort: { fields: [postedDate] }) {
             edges {
                 node {
+                    id
                     title
-                    subtitle {
-                        subtitle
-                    }
-                    description {
-                        description
-                    }
+                    slug
                     mainImage {
                         resolutions {
                             src
                         }
+                        id
                     }
-                    slug
                     postedDate(formatString: "MMMM DD, YYYY")
+                    createdAt
                 }
             }
         }
     }
 `;
 
-export default class IndexPage extends React.Component<BlogProps, {}> {
+export default class BlogPage extends React.Component<BlogProps, {}> {
     renderMovieTile = (post: Post, index: number) => {
+        let slug = `blog/${post.slug}`;
         return (
             <div key={index} className={styles.BlogPostTile}>
                 <img
                     src={post.mainImage.resolutions.src}
                     className={styles.PostImg}
                 />
-                <h2>{post.title}</h2>
-                <span>{post.postedDate}</span>
-                <p>{post.description.description}</p>
+                <Link to={slug}>
+                    <div className="post-list">
+                        <h2>{post.title}</h2>
+                        <span>{post.postedDate}</span>
+                    </div>
+                </Link>
             </div>
         );
     };
@@ -107,7 +99,7 @@ export default class IndexPage extends React.Component<BlogProps, {}> {
         );
 
         return (
-            <div className={styles.Container}>
+            <Layout>
                 <h1>{name}</h1>
                 <p>{tagline}</p>
                 <div className={styles.BlogPostsWrapper}>
@@ -118,7 +110,7 @@ export default class IndexPage extends React.Component<BlogProps, {}> {
                 <a href={githubLink} className={styles.Link}>
                     See the code on Github &rarr;
                 </a>
-            </div>
+            </Layout>
         );
     }
 }

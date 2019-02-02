@@ -1,0 +1,104 @@
+{
+    "name": "Blog Post",
+    "description": "Individual blog posts for drakeloud.com",
+    "displayField": "title",
+    "fields": [
+        {
+            "id": "mainImage",
+            "name": "Main Image",
+            "type": "Link",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "linkType": "Asset"
+        },
+        {
+            "id": "title",
+            "name": "Title",
+            "type": "Symbol",
+            "localized": false,
+            "required": true,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+        },
+        {
+            "id": "slug",
+            "name": "slug",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+        },
+        {
+            "id": "postedDate",
+            "name": "postedDate",
+            "type": "Date",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+        },
+        {
+            "id": "content",
+            "name": "content",
+            "type": "Text",
+            "localized": false,
+            "required": true,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+        }
+    ],
+    "sys": {
+        "space": {
+            "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "yf1vb7qjy0x5"
+            }
+        },
+        "id": "blogPost",
+        "type": "ContentType",
+        "createdAt": "2019-01-13T08:12:24.826Z",
+        "updatedAt": "2019-01-24T05:54:09.096Z",
+        "environment": {
+            "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+            }
+        },
+        "createdBy": {
+            "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "41d9F3V5Voq56hs9Q1Wk5t"
+            }
+        },
+        "updatedBy": {
+            "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "41d9F3V5Voq56hs9Q1Wk5t"
+            }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+            "sys": {
+                "type": "Link",
+                "linkType": "User",
+                "id": "41d9F3V5Voq56hs9Q1Wk5t"
+            }
+        },
+        "publishedVersion": 5,
+        "firstPublishedAt": "2019-01-13T08:12:25.452Z",
+        "publishedAt": "2019-01-24T05:54:09.096Z"
+    }
+}
