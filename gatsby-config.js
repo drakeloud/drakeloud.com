@@ -9,6 +9,7 @@ module.exports = {
     plugins: [
         `gatsby-plugin-sass`,
         `gatsby-plugin-typescript`,
+        `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
         {
             resolve: `gatsby-source-contentful`,

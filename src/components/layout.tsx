@@ -1,20 +1,14 @@
-import "bootstrap/dist/css/bootstrap.css";
-
+import * as layoutStyles from "./layout.module.scss";
 import React from "react";
 import { Link } from "gatsby";
-import { Nav, Navbar, NavItem, Container } from "react-bootstrap";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "bulma/css/bulma.css";
+import Helmet from "react-helmet";
 
 export default ({ children }: any) => (
-    <div className="app">
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">DrakeLoud.com</Navbar.Brand>
-            <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About Me</Nav.Link>
-                <Nav.Link href="/contact">Contact</Nav.Link>
-                <Nav.Link href="/blog">Blog</Nav.Link>
-            </Nav>
-        </Navbar>
-        <Container>{children}</Container>
+    <div className="">
+        <Helmet />
+        <div>{children}</div>
     </div>
 );
