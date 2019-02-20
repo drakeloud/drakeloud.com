@@ -11,6 +11,7 @@ module.exports = {
         `gatsby-plugin-typescript`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
+        `gatsby-image`,
         {
             resolve: `gatsby-source-contentful`,
             options: {

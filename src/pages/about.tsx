@@ -3,9 +3,20 @@ import Layout from "../components/layout";
 
 export default () => (
     <Layout>
-        <h1>About me</h1>
-        <p>
-            I’m good enough, I’m smart enough, and gosh darn it, people like me!
-        </p>
+        <div className="">
+            <section className="hero is-primary is-bold">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">About</h1>
+                        <h2 className="subtitle">A test subtitle</h2>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div className="container">
+                    <div>This is the content</div>
+                </div>
+            </section>
+        </div>
     </Layout>
 );

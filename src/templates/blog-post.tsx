@@ -42,12 +42,29 @@ export default class BlogPostTemplate extends React.Component<
 
         return (
             <Layout>
-                <h1>{post.title}</h1>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: post.content.childMarkdownRemark.html
-                    }}
-                />
+                <div className="">
+                    <section className="hero is-primary is-bold">
+                        <div className="hero-body">
+                            <div className="container">
+                                <h1 className="title">{post.title}</h1>
+                                <h2 className="subtitle">A test subtitle</h2>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div className="container content is-centered">
+                            <div className="column is-half">
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            post.content.childMarkdownRemark
+                                                .html
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </Layout>
         );
     }
