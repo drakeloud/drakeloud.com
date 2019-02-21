@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => (
     <nav
-        className="navbar container"
+        className="navbar container has-shadow"
         role="navigation"
         aria-label="main navigation"
     >
