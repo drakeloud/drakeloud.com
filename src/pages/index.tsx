@@ -114,12 +114,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
 
         return (
             <Layout>
-                {/* <!-- Header --> */}
-
                 <section className={`hero is-medium ${indexCss.hasBgImg}`}>
-                    {/* <div className="hero-head">
-                        <Navbar />
-                    </div> */}
                     <div className={`hero-body container has-text-centered `}>
                         <div>
                             <h1
@@ -134,12 +129,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 Software Developer
                             </h2>
                         </div>
-                        {/* <div className={indexCss.indexImage} /> */}
                     </div>
                 </section>
-                {/* <section className="hero is-primary">
-                    <div className="hero-body" />
-                </section> */}
                 <section className="section">
                     <div className="container">
                         <div className="columns is-vcentered">
@@ -194,6 +185,14 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                         View Library
                                     </a>
                                 </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div className="columns is-vcentered">
+                            <div className="column">
+                                <p className="title has-text-primary">
+                                    About Me
+                                </p>
                             </div>
                         </div>
                     </div>

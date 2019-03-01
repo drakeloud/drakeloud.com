@@ -33,8 +33,8 @@ export default () => (
                 <a href="/blog" className="navbar-item">
                     Blog
                 </a>
-                <a href="/about" className="navbar-item">
-                    About
+                <a href="#" className="navbar-item">
+                    Design Pattern Library
                 </a>
             </div>
         </div>
