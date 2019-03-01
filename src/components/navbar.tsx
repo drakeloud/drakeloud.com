@@ -1,14 +1,15 @@
 import React from "react";
+// import L from "../images/";
 
 export default () => (
     <nav
-        className="navbar container has-shadow"
+        className="navbar container"
         role="navigation"
         aria-label="main navigation"
     >
         <div className="navbar-brand">
-            <a className="navbar-item has-text-primary" href="/">
-                <b>Drake Loud</b>
+            <a className="navbar-item logo" href="/">
+                DRAKE LOUD
             </a>
 
             <a

@@ -146,7 +146,7 @@ export default class BlogPage extends React.Component<BlogProps, {}> {
                         </div>
                     </div>
                 </section>
-                <section className="section is-medium">
+                <section className="section">
                     <div className="container">
                         <div className="columns is-vcentered">
                             <div className="column">

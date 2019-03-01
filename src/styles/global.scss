@@ -1,10 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500,700");
+@import url("https://fonts.googleapis.com/css?family=Rubik:700");
+
 // BULMA VARIABLE OVER-RIDES
-// $primary: #b084eb;
+$primary: #375a7d;
 // $blue: #7dc1ff;
 // $input-shadow: none;
-// $info: $blue;
+$link: #558a84;
 // $background: #fafafa;
 $fullhd-enabled: false;
-$footer-background-color: #f1eef9;
+$footer-background-color: #ebefee;
+$emphasis: #f26158;
 
 @import "../../node_modules/bulma/bulma.sass";
+
+.titleFont {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}
+
+.logo {
+    font-family: "Rubik", sans-serif;
+}
