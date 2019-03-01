@@ -90,25 +90,20 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                     </span>
                 </div>
                 <br />
-
                 <p className="">
                     A generic subtitle for now. This is just a short subtitle
                     that will hopefully be better someday.
                 </p>
-                {/* <div className={`has-text-centered ${indexCss.postButton}`}> */}
                 <div className={`${indexCss.flexHeight}`}>
                     <a
                         href={slug}
                         className={`button is-link is-outlined ${
                             indexCss.postButton
                         }`}
-                        // className="button is-link is-rounded is-outlined"
                     >
                         View Post
                     </a>
                 </div>
-
-                {/* </div> */}
             </div>
         );
     };
