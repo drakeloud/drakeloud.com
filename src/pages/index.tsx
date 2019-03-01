@@ -125,8 +125,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 Drake Loud
                             </h1>
                             <h2 className="subtitle is-3 has-text-grey">
-                                Technology Innovator, Solutions Architect,
-                                Software Developer
+                                Tech Innovator, Solutions Architect, Software
+                                Developer
                             </h2>
                         </div>
                     </div>

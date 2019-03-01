@@ -12,6 +12,8 @@
         "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
     },
     "dependencies": {
+        "@fortawesome/free-brands-svg-icons": "^5.7.2",
+        "@fortawesome/react-fontawesome": "^0.1.4",
         "@types/react-helmet": "^5.0.8",
         "bulma": "^0.7.4",
         "dotenv": "^6.2.0",
