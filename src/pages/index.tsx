@@ -3,6 +3,9 @@ import { Link, graphql } from "gatsby";
 import * as indexCss from "./index.module.scss";
 import Layout from "../components/layout";
 import tsLogo from "../images/typescript.png";
+import self from "../images/self.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 interface Post {
     id: string;
@@ -125,8 +128,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 Drake Loud
                             </h1>
                             <h2 className="subtitle is-3 has-text-grey">
-                                Tech Innovator, Solutions Architect, Software
-                                Developer
+                                Emerging Tech Enthusiast, Solution and Software
+                                Architect
                             </h2>
                         </div>
                     </div>
@@ -160,7 +163,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                         </div>
                         <div className="columns">
                             <div className="column is-2">
-                                <figure className="image is-128x128">
+                                <figure className="image">
                                     <img src={tsLogo} />
                                 </figure>
                             </div>
@@ -193,6 +196,39 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 <p className="title has-text-primary">
                                     About Me
                                 </p>
+                            </div>
+                        </div>
+                        <div className="columns">
+                            <div className="column is-2">
+                                <figure className="image">
+                                    <img
+                                        className={` ${indexCss.selfImg}`}
+                                        src={self}
+                                    />
+                                </figure>
+                            </div>
+                            <div className="column">
+                                <span className="title is-4">Tech</span>
+                                <p>
+                                    I love creating and developing unique
+                                    solutions. I'm interested in finding
+                                    business value from emerging technologies
+                                    and finding the viability of new services
+                                    and offerings.
+                                </p>
+                                <br />
+
+                                <span className="title is-4">Contact</span>
+                                <p>
+                                    I live and work in Seattle, WA. If you want
+                                    to chat, then reach out to me on my
+                                    <a href="https://www.linkedin.com/in/drakeloud">
+                                        {" "}
+                                        LinkedIn!
+                                    </a>
+                                </p>
+
+                                <br />
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,6 @@
 import React from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import L from "../images/";
 
 export default () => (
@@ -28,6 +30,7 @@ export default () => (
         <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-end">
                 <a href="/" className="navbar-item">
+                    {/* <FontAwesomeIcon icon={faHome} /> */}
                     Home
                 </a>
                 <a href="#" className="navbar-item">

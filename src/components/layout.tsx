@@ -24,13 +24,13 @@ export default ({ children }: any) => (
                 </div>
                 {console.log(layoutCss)}
                 <div className={`has-text-centered ${layoutCss.socialIcons}`}>
-                    <a href="">
+                    <a href="https://github.com/drakeloud">
                         <FontAwesomeIcon icon={faGithubSquare} />
                     </a>
-                    <a href="">
+                    <a href="https://www.linkedin.com/in/drakeloud">
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
-                    <a href="">
+                    <a href="https://twitter.com/drakeloud">
                         <FontAwesomeIcon icon={faTwitterSquare} />
                     </a>
                 </div>
