@@ -1,11 +1,9 @@
 import React from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHome } from "@fortawesome/free-solid-svg-icons";
-// import L from "../images/";
+import * as navCss from "./navbar.module.scss";
 
 export default () => (
     <nav
-        className="navbar container"
+        className={`navbar container`}
         role="navigation"
         aria-label="main navigation"
     >
@@ -33,7 +31,7 @@ export default () => (
                     {/* <FontAwesomeIcon icon={faHome} /> */}
                     Home
                 </a>
-                <a href="#" className="navbar-item">
+                <a href="/design-pattern-library" className="navbar-item">
                     Design Pattern Library
                 </a>
                 <a href="/blog" className="navbar-item">

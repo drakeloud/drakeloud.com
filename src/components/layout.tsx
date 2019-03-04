@@ -14,15 +14,14 @@ export default ({ children }: any) => (
     <div className="">
         <Helmet />
         <Navbar />
-        <div>{children}</div>
-        <footer className="footer">
+        <div className={``}>{children}</div>
+        <footer className={`footer ${layoutCss.footer}`}>
             <div className="container">
                 <div className="has-text-centered">
                     <p className="">
                         Drake Loud - &copy; {new Date().getFullYear()}
                     </p>
                 </div>
-                {console.log(layoutCss)}
                 <div className={`has-text-centered ${layoutCss.socialIcons}`}>
                     <a href="https://github.com/drakeloud">
                         <FontAwesomeIcon icon={faGithubSquare} />

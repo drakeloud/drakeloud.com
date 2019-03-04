@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
+import * as postCss from "./blog-post.module.scss";
 
 interface BlogPostProps {
     data: {
@@ -37,23 +38,21 @@ export default class BlogPostTemplate extends React.Component<
 > {
     render() {
         const post = this.props.data.contentfulBlogPost;
-        // const siteTitle = this.props.data.site.siteMetadata.title;
-        // const { previous, next } = this.props.pageContext;
 
         return (
             <Layout>
-                <div className="">
-                    <section className="hero is-primary is-bold">
-                        <div className="hero-body">
-                            <div className="container">
-                                <h1 className="title">{post.title}</h1>
-                                <h2 className="subtitle">A test subtitle</h2>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div className="container content is-centered">
-                            <div className="column is-half">
+                <section>
+                    <div className="container">
+                        <div className="columns content">
+                            <div className="column is-two-thirds">
+                                <div className={`${postCss.title}`}>
+                                    <h1 className="is-size-2 title has-text-primary">
+                                        {post.title}
+                                    </h1>
+                                    <h2 className="subtitle">
+                                        A test subtitle
+                                    </h2>
+                                </div>
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html:
@@ -63,8 +62,8 @@ export default class BlogPostTemplate extends React.Component<
                                 />
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </Layout>
         );
     }
