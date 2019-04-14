@@ -13,6 +13,12 @@ module.exports = {
         `gatsby-transformer-remark`,
         `gatsby-image`,
         {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: process.env.GOOGLE_ANALYTICS_ID
+            }
+        },
+        {
             resolve: `gatsby-source-contentful`,
             options: {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
