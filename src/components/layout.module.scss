@@ -9,6 +9,17 @@
     }
 }
 
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.body {
+    flex-grow: 1;
+}
+
 .footer {
     margin-top: 3.5rem;
+    flex-shrink: 0;
 }

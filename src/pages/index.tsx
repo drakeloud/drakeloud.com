@@ -10,6 +10,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 interface Post {
     id: string;
     title: string;
+    subtitle: string;
     mainImage: {
         resolutions: {
             src: string;
@@ -17,7 +18,6 @@ interface Post {
     };
     slug: string;
     postedDate: string;
-    createdAt: string;
 }
 interface IndexProps {
     data: {
@@ -66,6 +66,7 @@ export const IndexQuery = graphql`
                 node {
                     id
                     title
+                    subtitle
                     slug
                     mainImage {
                         resolutions {
@@ -93,10 +94,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                     </span>
                 </div>
                 <br />
-                <p className="">
-                    A generic subtitle for now. This is just a short subtitle
-                    that will hopefully be better someday.
-                </p>
+                <p className="">{post.subtitle}</p>
                 <div className={`${indexCss.flexHeight}`}>
                     <a
                         href={slug}
@@ -128,8 +126,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 Drake Loud
                             </h1>
                             <h2 className="subtitle is-3 has-text-grey">
-                                Emerging Tech Enthusiast, Solution and Software
-                                Architect
+                                Emerging Tech Enthusiast, Full Stack Developer
                             </h2>
                         </div>
                     </div>
@@ -153,6 +150,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 <p>View More Posts</p>
                             </Link>
                         </div>
+                        {/*
                         <hr />
                         <div className="columns is-vcentered">
                             <div className="column">
@@ -189,7 +187,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <hr />
                         <div className="columns is-vcentered">
                             <div className="column">

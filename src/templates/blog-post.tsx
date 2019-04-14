@@ -15,6 +15,7 @@ interface BlogPostProps {
         contentfulBlogPost: {
             id: string;
             title: string;
+            subtitle: string;
             mainImage: {
                 resolutions: {
                     src: string;
@@ -22,7 +23,6 @@ interface BlogPostProps {
             };
             slug: string;
             postedDate: string;
-            createdAt: string;
             content: {
                 childMarkdownRemark: {
                     html: string;
@@ -49,9 +49,16 @@ export default class BlogPostTemplate extends React.Component<
                                     <h1 className="is-size-2 title has-text-primary">
                                         {post.title}
                                     </h1>
-                                    <h2 className="subtitle">
-                                        A test subtitle
+                                    <h2
+                                        className={`${
+                                            postCss.subtitle
+                                        } subtitle`}
+                                    >
+                                        {post.subtitle}
                                     </h2>
+                                    <p className={`${postCss.postDate}`}>
+                                        {post.postedDate}
+                                    </p>
                                 </div>
                                 <div
                                     dangerouslySetInnerHTML={{
@@ -87,6 +94,7 @@ export const pageQuery = graphql`
                 id
             }
             title
+            subtitle
             postedDate(formatString: "MMMM Do, YYYY")
             content {
                 childMarkdownRemark {

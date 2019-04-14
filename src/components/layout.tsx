@@ -11,10 +11,10 @@ import Helmet from "react-helmet";
 import Navbar from "../components/navbar";
 
 export default ({ children }: any) => (
-    <div className="">
+    <div className={`${layoutCss.layout}`}>
         <Helmet />
         <Navbar />
-        <div className={``}>{children}</div>
+        <div className={`${layoutCss.body}`}>{children}</div>
         <footer className={`footer ${layoutCss.footer}`}>
             <div className="container">
                 <div className="has-text-centered">

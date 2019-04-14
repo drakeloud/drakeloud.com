@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 interface Post {
     id: string;
     title: string;
+    subtitle: string;
     mainImage: {
         resolutions: {
             src: string;
@@ -13,7 +14,6 @@ interface Post {
     };
     slug: string;
     postedDate: string;
-    createdAt: string;
 }
 interface BlogProps {
     data: {
@@ -30,6 +30,7 @@ interface BlogProps {
                     node: {
                         id: string;
                         title: string;
+                        subtitle: string;
                         mainImage: {
                             resolutions: {
                                 src: string;
@@ -37,7 +38,6 @@ interface BlogProps {
                         };
                         slug: string;
                         postedDate: string;
-                        createdAt: string;
                     };
                 }
             ];
@@ -59,6 +59,7 @@ export const BlogQuery = graphql`
                 node {
                     id
                     title
+                    subtitle
                     slug
                     mainImage {
                         resolutions {
@@ -67,7 +68,6 @@ export const BlogQuery = graphql`
                         id
                     }
                     postedDate(formatString: "MMMM DD, YYYY")
-                    createdAt
                 }
             }
         }
@@ -84,10 +84,7 @@ export default class BlogPage extends React.Component<BlogProps, {}> {
                     <br />
                     <span className={`${blogCss.date}`}>{post.postedDate}</span>
                 </div>
-                <p className="">
-                    A generic subtitle for now. This is just a short subtitle
-                    that will hopefully be better someday.
-                </p>
+                <p className="">{post.subtitle}</p>
                 <div>
                     <a href={slug} className={`button is-link is-outlined`}>
                         View Post

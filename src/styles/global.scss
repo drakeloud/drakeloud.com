@@ -26,3 +26,18 @@ p {
 .logo {
     font-family: "Rubik", sans-serif;
 }
+
+.box-shadow,
+.content img {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+#nav-toggle-state {
+    display: none;
+    background-color: blue !important;
+}
+
+#nav-toggle-state:checked ~ .nav-bar-menu {
+    display: block;
+    background-color: red !important;
+}
