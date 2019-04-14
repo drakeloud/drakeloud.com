@@ -23,44 +23,46 @@ export default class Navbar extends React.Component<NavProps, NavState> {
     public render() {
         return (
             <nav
-                className={`navbar container`}
+                className={`navbar`}
                 role="navigation"
                 aria-label="main navigation"
             >
-                <div className="navbar-brand">
-                    <a className="navbar-item logo" href="/">
-                        DRAKE LOUD
-                    </a>
-
-                    <a
-                        role="button"
-                        className="navbar-burger burger"
-                        aria-label="menu"
-                        aria-expanded="false"
-                        onClick={this.toggleNav}
-                    >
-                        <span aria-hidden="true" />
-                        <span aria-hidden="true" />
-                        <span aria-hidden="true" />
-                    </a>
-                </div>
-                <div
-                    className={`navbar-menu ${
-                        this.state.isActive ? "is-active" : ""
-                    }`}
-                >
-                    {/* <div className="navbar-menu "> */}
-                    <div className="navbar-end">
-                        <a href="/" className="navbar-item">
-                            {/* <FontAwesomeIcon icon={faHome} /> */}
-                            Home
+                <div className="container">
+                    <div className="navbar-brand ">
+                        <a className="navbar-item logo" href="/">
+                            DRAKE LOUD
                         </a>
-                        {/* <a href="/design-pattern-library" className="navbar-item">
+
+                        <a
+                            role="button"
+                            className="navbar-burger burger"
+                            aria-label="menu"
+                            aria-expanded="false"
+                            onClick={this.toggleNav}
+                        >
+                            <span aria-hidden="true" />
+                            <span aria-hidden="true" />
+                            <span aria-hidden="true" />
+                        </a>
+                    </div>
+                    <div
+                        className={`navbar-menu ${
+                            this.state.isActive ? "is-active" : ""
+                        }`}
+                    >
+                        {/* <div className="navbar-menu "> */}
+                        <div className="navbar-end">
+                            <a href="/" className="navbar-item">
+                                {/* <FontAwesomeIcon icon={faHome} /> */}
+                                Home
+                            </a>
+                            {/* <a href="/design-pattern-library" className="navbar-item">
                         Design Pattern Library
                         </a> */}
-                        <a href="/blog" className="navbar-item">
-                            Blog
-                        </a>
+                            <a href="/blog" className="navbar-item">
+                                Blog
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
