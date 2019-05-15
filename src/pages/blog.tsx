@@ -76,7 +76,7 @@ export const BlogQuery = graphql`
 
 export default class BlogPage extends React.Component<BlogProps, {}> {
     renderPosts = (post: Post, index: number) => {
-        let slug = `blog/${post.slug}`;
+        let slug = `${post.slug}`;
         return (
             <div key={index} className={` ${blogCss.post}`}>
                 <div>
