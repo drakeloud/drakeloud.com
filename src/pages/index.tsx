@@ -146,7 +146,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                             )}
                         </div>
                         <div>
-                            <Link to="/blog">
+                            <Link to="/blog/">
                                 <p>View More Posts</p>
                             </Link>
                         </div>
