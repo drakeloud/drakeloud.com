@@ -42,17 +42,15 @@ export default class BlogPostTemplate extends React.Component<
         return (
             <Layout>
                 <section>
-                    <div className="container">
-                        <div className="columns content">
+                    <div className={`container ${postCss.containerPadding}`}>
+                        <div className={`columns content ${postCss.wraptext}`}>
                             <div className="column is-two-thirds">
                                 <div className={`${postCss.title}`}>
                                     <h1 className="is-size-2 title has-text-primary">
                                         {post.title}
                                     </h1>
                                     <h2
-                                        className={`${
-                                            postCss.subtitle
-                                        } subtitle`}
+                                        className={`${postCss.subtitle} subtitle`}
                                     >
                                         {post.subtitle}
                                     </h2>
