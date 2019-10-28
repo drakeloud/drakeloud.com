@@ -2,7 +2,7 @@ require(`dotenv`).config({ path: `.env` });
 
 module.exports = {
     siteMetadata: {
-        name: `Test Blog site`,
+        name: `Drake Loud`,
         tagline: `"Do, or do not. There is no try."`,
         githubLink: `https://github.com`
     },
