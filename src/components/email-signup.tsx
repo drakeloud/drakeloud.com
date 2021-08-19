@@ -31,7 +31,7 @@ export default class EmailSignup extends React.Component<EmailSignupProps, Email
     handleSubmit = async (e: any) => {
         e.preventDefault();
         this.setState({ loading: true });
-        const result = await addToMailchimp(this.state.email, { firstName: this.state.firstName });
+        const result = await addToMailchimp(this.state.email, { FNAME: this.state.firstName });
         console.log(result);
         this.setState({ responseMessage: result, loading: false });
     };
