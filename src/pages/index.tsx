@@ -6,6 +6,7 @@ import tsLogo from "../images/typescript.png";
 import self from "../images/self.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import EmailSignup from "../components/email-signup";
 
 interface Post {
     id: string;
@@ -98,9 +99,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                 <div className={`${indexCss.flexHeight}`}>
                     <a
                         href={slug}
-                        className={`button is-link is-outlined ${
-                            indexCss.postButton
-                        }`}
+                        className={`button is-link is-outlined ${indexCss.postButton
+                            }`}
                     >
                         View Post
                     </a>
@@ -119,9 +119,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                     <div className={`hero-body container has-text-centered `}>
                         <div>
                             <h1
-                                className={`title has-text-primary ${
-                                    indexCss.titleText
-                                }`}
+                                className={`title has-text-primary ${indexCss.titleText
+                                    }`}
                             >
                                 Drake Loud
                             </h1>
@@ -189,6 +188,8 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                             </div>
                         </div> */}
                         <hr />
+                        <EmailSignup />
+                        <hr />
                         <div className="columns is-vcentered">
                             <div className="column">
                                 <p className="title has-text-primary">
@@ -218,7 +219,7 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
 
                                 <span className="title is-4">Contact</span>
                                 <p>
-                                    I live and work in Seattle, WA. If you want
+                                    I live and work in Chicago, IL. If you want
                                     to chat, then reach out to me on my
                                     <a href="https://www.linkedin.com/in/drakeloud">
                                         {" "}

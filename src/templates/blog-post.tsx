@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import * as postCss from "./blog-post.module.scss";
+import EmailSignup from "../components/email-signup";
 
 interface BlogPostProps {
     data: {
@@ -67,7 +68,10 @@ export default class BlogPostTemplate extends React.Component<
                                 />
                             </div>
                         </div>
+                        <hr />
+                        <EmailSignup />
                     </div>
+
                 </section>
             </Layout>
         );
