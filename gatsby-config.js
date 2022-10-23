@@ -7,7 +7,12 @@ module.exports = {
         githubLink: `https://github.com`
     },
     plugins: [
-        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                implementation: require('sass')
+            },
+        },
         `gatsby-plugin-typescript`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
