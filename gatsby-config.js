@@ -14,9 +14,8 @@ module.exports = {
             },
         },
         `gatsby-plugin-typescript`,
-        `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
-        `gatsby-image`,
+        `gatsby-plugin-image`,
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
