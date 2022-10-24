@@ -12,11 +12,6 @@ interface Post {
     id: string;
     title: string;
     subtitle: string;
-    mainImage: {
-        resolutions: {
-            src: string;
-        };
-    };
     slug: string;
     postedDate: string;
 }
@@ -35,11 +30,6 @@ interface IndexProps {
                     node: {
                         id: string;
                         title: string;
-                        mainImage: {
-                            resolutions: {
-                                src: string;
-                            };
-                        };
                         slug: string;
                         postedDate: string;
                         createdAt: string;
@@ -69,12 +59,6 @@ export const IndexQuery = graphql`
                     title
                     subtitle
                     slug
-                    mainImage {
-                        resolutions {
-                            src
-                        }
-                        id
-                    }
                     postedDate(formatString: "MMMM DD, YYYY")
                     createdAt
                 }

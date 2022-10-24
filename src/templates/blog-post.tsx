@@ -17,11 +17,6 @@ interface BlogPostProps {
             id: string;
             title: string;
             subtitle: string;
-            mainImage: {
-                resolutions: {
-                    src: string;
-                };
-            };
             slug: string;
             postedDate: string;
             content: {
@@ -89,12 +84,6 @@ export const pageQuery = graphql`
         }
         contentfulBlogPost(slug: { eq: $slug }) {
             id
-            mainImage {
-                resolutions {
-                    src
-                }
-                id
-            }
             title
             subtitle
             postedDate(formatString: "MMMM Do, YYYY")

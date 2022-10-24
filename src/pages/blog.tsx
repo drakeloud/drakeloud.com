@@ -7,11 +7,6 @@ interface Post {
     id: string;
     title: string;
     subtitle: string;
-    mainImage: {
-        resolutions: {
-            src: string;
-        };
-    };
     slug: string;
     postedDate: string;
 }
@@ -31,11 +26,6 @@ interface BlogProps {
                         id: string;
                         title: string;
                         subtitle: string;
-                        mainImage: {
-                            resolutions: {
-                                src: string;
-                            };
-                        };
                         slug: string;
                         postedDate: string;
                     };
@@ -61,12 +51,6 @@ export const BlogQuery = graphql`
                     title
                     subtitle
                     slug
-                    mainImage {
-                        resolutions {
-                            src
-                        }
-                        id
-                    }
                     postedDate(formatString: "MMMM DD, YYYY")
                 }
             }
