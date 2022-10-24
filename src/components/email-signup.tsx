@@ -42,9 +42,11 @@ export default class EmailSignup extends React.Component<EmailSignupProps, Email
                 <div className="columns is-vcentered">
                     <div className="column">
                         <p className="title has-text-primary">
-                            Newsletter
+                            Want to be notified about new posts?
                         </p>
-                        <p>Interested in getting notified of my occassional posts directly to your inbox? Then sign up below!</p>
+                        <p>
+                            Then sign up to get posts directly to your email. You can opt-out at any time.
+                        </p>
                     </div>
                 </div>
                 {
