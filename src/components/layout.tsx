@@ -7,12 +7,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import * as layoutCss from "./layout.module.scss";
 
-import Helmet from "react-helmet";
 import Navbar from "../components/navbar";
 
 export default ({ children }: any) => (
     <div className={`${layoutCss.layout}`}>
-        <Helmet />
         <Navbar />
         <div className={`${layoutCss.body}`}>{children}</div>
         <footer className={`footer ${layoutCss.footer}`}>
