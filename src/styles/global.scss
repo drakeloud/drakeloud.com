@@ -37,7 +37,13 @@ p {
     background-color: blue !important;
 }
 
-#nav-toggle-state:checked ~ .nav-bar-menu {
+#nav-toggle-state:checked~.nav-bar-menu {
     display: block;
     background-color: red !important;
+}
+
+// Fixes weird issue with .number between bulma and prismjs
+.token.number,
+.token.tag {
+    all: inherit;
 }
