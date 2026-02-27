@@ -44,7 +44,7 @@ export const BlogQuery = graphql`
                 githubLink
             }
         }
-        allContentfulBlogPost(sort: { fields: [postedDate], order: DESC }) {
+        allContentfulBlogPost(sort: { postedDate: DESC }) {
             edges {
                 node {
                     id

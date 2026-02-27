@@ -51,7 +51,7 @@ export const IndexQuery = graphql`
         }
         allContentfulBlogPost(
             limit: 3
-            sort: { fields: [postedDate], order: DESC }
+            sort: { postedDate: DESC }
         ) {
             edges {
                 node {
