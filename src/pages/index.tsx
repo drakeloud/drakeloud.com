@@ -11,7 +11,6 @@ import EmailSignup from "../components/email-signup";
 interface Post {
     id: string;
     title: string;
-    subtitle: string;
     slug: string;
     postedDate: string;
 }
@@ -57,7 +56,6 @@ export const IndexQuery = graphql`
                 node {
                     id
                     title
-                    subtitle
                     slug
                     postedDate(formatString: "MMMM DD, YYYY")
                     createdAt
@@ -78,8 +76,6 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                         {post.postedDate}
                     </span>
                 </div>
-                <br />
-                <p className="">{post.subtitle}</p>
                 <div className={`${indexCss.flexHeight}`}>
                     <a
                         href={slug}

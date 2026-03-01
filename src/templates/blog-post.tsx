@@ -16,7 +16,6 @@ interface BlogPostProps {
         contentfulBlogPost: {
             id: string;
             title: string;
-            subtitle: string;
             slug: string;
             postedDate: string;
             content: {
@@ -45,11 +44,6 @@ export default class BlogPostTemplate extends React.Component<
                                     <h1 className="is-size-2 title has-text-primary">
                                         {post.title}
                                     </h1>
-                                    <h2
-                                        className={`${postCss.subtitle} subtitle`}
-                                    >
-                                        {post.subtitle}
-                                    </h2>
                                     <p className={`${postCss.postDate}`}>
                                         {post.postedDate}
                                     </p>
@@ -85,7 +79,6 @@ export const pageQuery = graphql`
         contentfulBlogPost(slug: { eq: $slug }) {
             id
             title
-            subtitle
             postedDate(formatString: "MMMM Do, YYYY")
             content {
                 childMarkdownRemark {
