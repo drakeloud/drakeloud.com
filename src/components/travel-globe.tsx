@@ -114,14 +114,6 @@ export default function TravelGlobe({ points }: TravelGlobeProps) {
                     ) => {
                         el.style.opacity = isVisible ? "1" : "0";
                     }}
-                    ringsData={points}
-                    ringLat="lat"
-                    ringLng="lng"
-                    ringColor={(d: GlobePoint) => (t: number) => hexToRgba(d.color, 1 - t)}
-                    ringMaxRadius={5}
-                    ringPropagationSpeed={3}
-                    ringRepeatPeriod={800}
-                    ringAltitude={0.005}
                     width={width}
                     height={450}
                 />

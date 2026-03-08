@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import * as postCss from "./blog-post.module.scss";
 import EmailSignup from "../components/email-signup";
@@ -38,7 +38,7 @@ export default class BlogPostTemplate extends React.Component<
             <Layout>
                 <section>
                     <div className={`container ${postCss.containerPadding}`}>
-                        <div className={`columns content ${postCss.wraptext}`}>
+                        <div className={`columns is-centered content ${postCss.wraptext}`}>
                             <div className="column is-two-thirds">
                                 <div className={`${postCss.title}`}>
                                     <h1 className="is-size-2 title has-text-primary">

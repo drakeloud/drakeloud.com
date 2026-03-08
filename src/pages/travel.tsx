@@ -77,7 +77,7 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
         return (
             <div
                 key={index}
-                className="column is-one-third-desktop is-half-tablet"
+                className="column is-one-quarter-desktop is-half-tablet"
             >
                 <a
                     href={`/travel/${rec.slug}/`}
@@ -108,8 +108,11 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
                                 <FontAwesomeIcon icon={faLocationDot} />
                             </div>
                         )}
-                        <div className="card-content">
-                            <p className="title is-5 titleFont">{rec.title}</p>
+                        <div className="card-content" style={{ padding: "0.75rem" }}>
+                            <p className="title is-6 titleFont" style={{ marginBottom: "0.2rem" }}>{rec.title}</p>
+                            {rec.region && (
+                                <p style={{ fontSize: "0.8rem", color: "#888", margin: 0 }}>{rec.region}</p>
+                            )}
                         </div>
                     </div>
                 </a>
@@ -152,18 +155,18 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
 
         return (
             <Layout>
-                <section className="section">
+                <section className="section" style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem" }}>
                     <div className="container">
                         <h1
                             className="title has-text-primary"
-                            style={{ marginBottom: "1.5rem" }}
+                            style={{ marginBottom: "1rem" }}
                         >
                             Travel Recommendations
                         </h1>
                         {globePoints.length > 0 && (
                             <TravelGlobe points={globePoints} />
                         )}
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2rem" }}>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.25rem" }}>
                             {regions.map(region => (
                                 <a
                                     key={region}
@@ -176,17 +179,17 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
                                         fontWeight: 600,
                                     }}
                                 >
-                                    {region}
+                                    {region} · {grouped[region].length}
                                 </a>
                             ))}
                         </div>
                         {regions.map(region => {
                             const regionRecs = grouped[region];
                             return (
-                                <div key={region} id={regionId(region)} style={{ marginBottom: "3rem", scrollMarginTop: "4rem" }}>
+                                <div key={region} id={regionId(region)} style={{ marginBottom: "2rem", scrollMarginTop: "4rem" }}>
                                     <h2
                                         className="title is-4"
-                                        style={{ marginBottom: "0.75rem", color: colorMap[region] }}
+                                        style={{ marginBottom: "0.5rem", color: colorMap[region] }}
                                     >
                                         <FontAwesomeIcon
                                             icon={faLocationDot}
@@ -194,7 +197,7 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
                                         />
                                         {region}
                                     </h2>
-                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "0.75rem" }}>
+                                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "0.5rem" }}>
                                         {regionRecs.map(rec => (
                                             <a
                                                 key={rec.id}
