@@ -1,20 +1,30 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as indexCss from "./index.module.scss";
 import Layout from "../components/layout";
 import tsLogo from "../images/typescript.png";
 import self from "../images/self.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import EmailSignup from "../components/email-signup";
 
 interface Post {
     id: string;
     title: string;
-    subtitle: string;
     slug: string;
     postedDate: string;
 }
+
+interface TravelRec {
+    id: string;
+    title: string;
+    slug: string;
+    region: string | null;
+    mainImage: { gatsbyImageData: any; title: string } | null;
+}
+
 interface IndexProps {
     data: {
         site: {
@@ -37,6 +47,9 @@ interface IndexProps {
                 }
             ];
         };
+        allContentfulTravelRecommendation: {
+            edges: { node: TravelRec }[];
+        };
     };
 }
 
@@ -57,16 +70,63 @@ export const IndexQuery = graphql`
                 node {
                     id
                     title
-                    subtitle
                     slug
                     postedDate(formatString: "MMMM DD, YYYY")
                     createdAt
                 }
             }
         }
+        allContentfulTravelRecommendation(
+            filter: { topRecommendation: { eq: true } }
+        ) {
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    region
+                    mainImage {
+                        gatsbyImageData(width: 600, placeholder: BLURRED)
+                        title
+                    }
+                }
+            }
+        }
     }
 `;
 export default class IndexPage extends React.Component<IndexProps, {}> {
+    renderTravelCard = (rec: TravelRec, index: number) => {
+        const image = rec.mainImage ? getImage(rec.mainImage.gatsbyImageData) : null;
+        return (
+            <div key={index} className="column is-one-third-desktop is-half-tablet">
+                <a href={`/travel/${rec.slug}/`} style={{ display: "block", height: "100%", color: "inherit" }}>
+                    <div className="card" style={{ height: "100%" }}>
+                        {image ? (
+                            <div className="card-image">
+                                <GatsbyImage
+                                    image={image}
+                                    alt={rec.mainImage?.title ?? rec.title}
+                                    style={{ height: 200 }}
+                                    imgStyle={{ objectFit: "cover" }}
+                                />
+                            </div>
+                        ) : (
+                            <div style={{ height: 200, background: "#f0f0f0", display: "flex", alignItems: "center", justifyContent: "center", color: "#aaa", fontSize: "2rem" }}>
+                                <FontAwesomeIcon icon={faLocationDot} />
+                            </div>
+                        )}
+                        <div className="card-content" style={{ padding: "0.75rem" }}>
+                            <p className="title is-6 titleFont" style={{ marginBottom: "0.2rem" }}>{rec.title}</p>
+                            {rec.region && (
+                                <p style={{ fontSize: "0.8rem", color: "#888", margin: 0 }}>{rec.region}</p>
+                            )}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        );
+    };
+
     renderRecentPosts = (post: Post, index: number) => {
         let slug = `blog/${post.slug}`;
         return (
@@ -78,8 +138,6 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                         {post.postedDate}
                     </span>
                 </div>
-                <br />
-                <p className="">{post.subtitle}</p>
                 <div className={`${indexCss.flexHeight}`}>
                     <a
                         href={slug}
@@ -94,6 +152,9 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
     };
     public render() {
         const posts = this.props.data.allContentfulBlogPost.edges.map(
+            edge => edge.node
+        );
+        const travelRecs = this.props.data.allContentfulTravelRecommendation.edges.map(
             edge => edge.node
         );
 
@@ -133,44 +194,22 @@ export default class IndexPage extends React.Component<IndexProps, {}> {
                                 <p>View More Posts</p>
                             </Link>
                         </div>
-                        {/*
-                        <hr />
-                        <div className="columns is-vcentered">
-                            <div className="column">
-                                <p className="title has-text-primary">
-                                    Projects
-                                </p>
-                            </div>
-                        </div>
-                        <div className="columns">
-                            <div className="column is-2">
-                                <figure className="image">
-                                    <img src={tsLogo} />
-                                </figure>
-                            </div>
-                            <div className="column">
-                                <span className="title is-3">
-                                    Design Pattern Library
-                                </span>
-                                <p>
-                                    Brief explanations and examples of simple
-                                    design patterns. These patterns are general
-                                    solutions to common problems. Happily
-                                    written in Typescript ✌️
-                                    <br />
-                                </p>
-                                <div className={indexCss.libraryBtn}>
-                                    <a
-                                        href="/"
-                                        className={`button is-link is-outlined ${
-                                            indexCss.postButton
-                                        }`}
-                                    >
-                                        View Library
-                                    </a>
+                        {travelRecs.length > 0 && (
+                            <>
+                                <hr />
+                                <div className="columns is-vcentered">
+                                    <div className="column">
+                                        <p className="title has-text-primary">Top Travel Recommendations</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div> */}
+                                <div className="columns is-multiline">
+                                    {travelRecs.map((rec, i) => this.renderTravelCard(rec, i))}
+                                </div>
+                                <div>
+                                    <Link to="/travel/"><p>View All Recommendations</p></Link>
+                                </div>
+                            </>
+                        )}
                         <hr />
                         <EmailSignup />
                         <hr />

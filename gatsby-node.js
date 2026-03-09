@@ -6,11 +6,23 @@ exports.createPages = ({ graphql, actions }) => {
 
     return new Promise((resolve, reject) => {
         const blogPost = path.resolve("./src/templates/blog-post.tsx");
+        const travelRecommendation = path.resolve(
+            "./src/templates/travel-recommendation.tsx"
+        );
+
         resolve(
             graphql(
                 `
                     {
                         allContentfulBlogPost {
+                            edges {
+                                node {
+                                    title
+                                    slug
+                                }
+                            }
+                        }
+                        allContentfulTravelRecommendation {
                             edges {
                                 node {
                                     title
@@ -33,6 +45,18 @@ exports.createPages = ({ graphql, actions }) => {
                         component: blogPost,
                         context: {
                             slug: post.node.slug
+                        }
+                    });
+                });
+
+                const recs =
+                    result.data.allContentfulTravelRecommendation.edges;
+                recs.forEach((rec, index) => {
+                    createPage({
+                        path: `/travel/${rec.node.slug}/`,
+                        component: travelRecommendation,
+                        context: {
+                            slug: rec.node.slug
                         }
                     });
                 });

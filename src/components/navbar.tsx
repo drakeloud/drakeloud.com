@@ -62,6 +62,9 @@ export default class Navbar extends React.Component<NavProps, NavState> {
                             <a href="/blog" className="navbar-item">
                                 Blog
                             </a>
+                            <a href="/travel" className="navbar-item">
+                                Travel
+                            </a>
                         </div>
                     </div>
                 </div>
