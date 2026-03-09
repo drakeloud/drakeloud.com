@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faStar } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/layout";
 import TravelGlobe from "../components/travel-globe";
 
@@ -33,6 +33,7 @@ interface Recommendation {
         gatsbyImageData: any;
         title: string;
     } | null;
+    topRecommendation: boolean | null;
 }
 
 interface TravelProps {
@@ -62,6 +63,7 @@ export const TravelQuery = graphql`
                         gatsbyImageData(width: 600, placeholder: BLURRED)
                         title
                     }
+                    topRecommendation
                 }
             }
         }
@@ -85,7 +87,27 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
                 >
                     <div className="card" style={{ height: "100%" }}>
                         {image ? (
-                            <div className="card-image">
+                            <div className="card-image" style={{ position: "relative" }}>
+                                {rec.topRecommendation && (
+                                    <span
+                                        style={{
+                                            position: "absolute",
+                                            top: "0.5rem",
+                                            right: "0.5rem",
+                                            zIndex: 1,
+                                            background: "rgba(0,0,0,0.55)",
+                                            borderRadius: "50%",
+                                            width: "2rem",
+                                            height: "2rem",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                        }}
+                                        title="Top recommendation"
+                                    >
+                                        <FontAwesomeIcon icon={faStar} style={{ color: "#f5c518", fontSize: "1rem" }} />
+                                    </span>
+                                )}
                                 <GatsbyImage
                                     image={image}
                                     alt={rec.mainImage?.title ?? rec.title}
