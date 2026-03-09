@@ -87,25 +87,25 @@ export default class TravelPage extends React.Component<TravelProps, {}> {
                 >
                     <div className="card" style={{ height: "100%" }}>
                         {image ? (
-                            <div className="card-image" style={{ position: "relative" }}>
+                            <div className="card-image" style={{ position: "relative", overflow: "visible" }}>
                                 {rec.topRecommendation && (
                                     <span
                                         style={{
                                             position: "absolute",
-                                            top: "0.5rem",
-                                            right: "0.5rem",
+                                            top: "-0.75rem",
+                                            right: "-0.75rem",
                                             zIndex: 1,
                                             background: "rgba(0,0,0,0.55)",
                                             borderRadius: "50%",
-                                            width: "2rem",
-                                            height: "2rem",
+                                            width: "2.75rem",
+                                            height: "2.75rem",
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
                                         }}
                                         title="Top recommendation"
                                     >
-                                        <FontAwesomeIcon icon={faStar} style={{ color: "#f5c518", fontSize: "1rem" }} />
+                                        <FontAwesomeIcon icon={faStar} style={{ color: "#f5c518", fontSize: "1.4rem" }} />
                                     </span>
                                 )}
                                 <GatsbyImage
